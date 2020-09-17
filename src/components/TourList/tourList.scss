@@ -1,0 +1,31 @@
+.tourlist {
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: 80vw;
+}
+$tablet: 768px;
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+@include tablet() {
+  .tourlist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0.5rem;
+  }
+}
+$laptop: 1024px;
+@mixin laptop {
+  @media (min-width:#{$laptop}) {
+    @content;
+  }
+}
+@include laptop {
+  .tourlist {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 0.3rem;
+  }
+}
